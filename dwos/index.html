@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="landingpage.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <title>Water Ordering System</title>
+</head>
+<body>
+    <nav>
+        <div class="nav__logo">
+            <a href=""><img src="image/dwoslogo.png" alt="Water Ordering System Logo" /></a>
+        </div> 
+        <div class="nav__menu">
+            <ul class="nav__links">
+                <li class="link"><a href="#home">HOME</a></li>
+                <li class="link"><a href="#about">ABOUT</a></li>
+            </ul>
+            <a href="login.php"><button class="btn">SIGN IN</button></a>
+        </div>
+    </nav>
+    <section class="section__container choose__container">
+        <div class="section__container home__container" id="home">
+            <h1>DISCOVER WATER STATIONS THAT</h1>
+            <h1> CLENCH YOUR THIRST AND YOUR SATISFACTIONS </h1>
+            <img class="backgroundimg" src="image/landingpage.png" alt="home background image"/>
+        </div>
+    </section> 
+    <section class="section__container1 choose__container1">
+        <div class="section__container1 about__container" id="about">
+            <h1 class="about_header">ABOUT US</h1>
+            <h2 class="about_subheader">Our website is a list or collaboration of different water stations exclusive only in the center of Polangui, Albay 
+                where you can choose your preferred drinking water station that you can order from, and it will be delivered to your respective houses. We also offer Premium Membership where both customer and station owner earn benefits to our promos.
+            </h2>
+            <div class="button-container">
+                <a href="login.php" class="discover-btn">Discover</a>
+            </div>            
+        </div>
+    </section>
+    <section class="section__container2 choose__container2">
+        <div class="section__container2 services__container">
+            <h1 class="services_header">SERVICES</h1>
+            <h2 class="services_subheader">Our Drinking Water Ordering System offers easy access to high-quality water delivery from trusted local stations. Customers can choose between the Most Popular Stations based on sales or Nearby Stations for faster service. The platform allows one-time orders or convenient subscription options, catering to both individual and business needs.
+            </h2>
+        </div>
+    </section>
+    <script>
+       // When the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    const discoverBtn = document.querySelector('.discover-btn');
+    const buttonContainer = document.querySelector('.button-container');
+    
+    // Get the position where you want to fix the button
+    const fixPosition = buttonContainer.offsetTop + buttonContainer.offsetHeight - 250; // Adjust as needed
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY >= fixPosition) {
+            discoverBtn.classList.add('fixed');
+        } else {
+            discoverBtn.classList.remove('fixed');
+        }
+    });
+});
+    </script>
+</body>
+</html>

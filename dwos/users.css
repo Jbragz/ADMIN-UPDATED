@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'Fredoka', sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: url('image/home.png') no-repeat;
+    min-height: 95vh;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+}
+
+/* General styling for the title headers */
+.header {
+    color: black;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin: 0 auto 20px;
+    margin-bottom: 20px;
+}
+
+/* Parent container for separating the owner and customer sections */
+.users-section {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Styling for each individual section */
+.container {
+    background-color: #F1F1F3;
+    border-radius: 30px;
+    padding: 20px;
+    width: 100%; /* Set to 100% for mobile */
+    max-width: 45%; /* Limit to max 45% for larger screens */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Added margin for spacing */
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%; /* Full width on smaller screens */
+    }
+}
+
+.container h2 {
+    font-family: 'Fredoka', sans-serif;
+    color: #01579b;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.user {
+    font-family: 'Fredoka', sans-serif;
+    background-color: #b2ebf2;
+    padding: 10px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #01579b;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    transition: background-color 0.3s; /* Added hover effect */
+}
+
+.user-id {
+    font-weight: bold;
+    background-color: #26c6da;
+    color: white;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Initially hide additional users */
+.user.hidden {
+    display: none;
+}
+
+.btn {
+    background-color: #26c6da;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0097a7; /* Darker color on hover */
+}
+
+/* Modal container */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed in place */
+    z-index: 1000; /* On top of everything else */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+/* Modal content */
+.modal-content {
+    position: fixed;
+    top: 40%; /* Adjusted to lift the modal higher */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80vw; /* Use viewport width */
+    max-width: 600px; /* Limit the max width */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    max-height: 90vh; /* Prevent it from becoming too tall */
+    overflow-y: auto;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%; /* Full width on smaller screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .modal-content {
+        width: 90vw; /* Make the modal wider on smaller screens */
+        max-width: 90vw; /* Remove the max width restriction */
+        padding: 15px;   /* Slightly smaller padding */
+    }
+}
+
+/* Close button */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+}
+
+
+
+/* Optional fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Full list styling in modal */
+.full-list {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+}
